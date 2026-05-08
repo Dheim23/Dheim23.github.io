@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>Darrell Heim's Portfolio/ contact</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+
+<h1 class="press-start-2p-regular">Contact Me</h1>
+<p>Looks like i impressed you. If you'd like to contact me the information is listed below</p>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects/Skills</a>
+  <a href="work.html">Work Experience</a>
+  <a href="contact.html">Contact</a>
+</nav>
+<img src="images/grad.JPG" alt="My Photo" width="300">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+
+<section class="box contact-section">
+
+  <h2 class="press-start-2p-regular">Contact Me</h2>
+
+  <form id="contact-form">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <textarea name="message" placeholder="Your Message" required></textarea>
+
+    <button type="submit">Send Message</button>
+
+  </form>
+</section>
+<script>
+  emailjs.init("IrS32XbG1PwIBo2Ct");
+
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_mijnkqg",
+      "template_5xwj2vc",
+      this
+    ).then(() => {
+      document.getElementById("status").innerText = "Message sent successfully!";
+      form.reset();
+    }).catch(() => {
+      document.getElementById("status").innerText = "Failed to send message.";
+    });
+  });
+</script>
+<div class="box">
+<a href="files/resume.pdf" download class="resume-btn">
+  📄 Download Resume
+</a>
+</div>
+
+<div class="box">
+<h2>My Contact Information</h2>
+<p>email: heimdarrell@gmail.com</p>
+<p>phone: 8505432726</p>
+<p>linkedin: www.linkedin.com/in/darrell-heim-44b667289 </p>
+<p>github:Dheim23</p>
+ </div>
+
+</body>
+</html>
