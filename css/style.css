@@ -158,9 +158,21 @@ p {
 
 .gallery {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+}
+
+.gallery p {
+    max-width: 600px;
 }
 
 /* THUMBNAIL IMAGES */
